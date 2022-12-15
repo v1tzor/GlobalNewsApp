@@ -29,7 +29,7 @@ internal object SettingsRoutingScreens {
     }
 }
 
-object NavigationKeys {
+internal object NavigationKeys {
     const val SETTINGS_FRAGMENT = "SETTINGS_FRAGMENT"
 
     const val CATEGORIES_DIALOG_FRAGMENT = "CATEGORIES_DIALOG_FRAGMENT"

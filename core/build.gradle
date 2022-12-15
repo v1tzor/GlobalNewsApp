@@ -77,6 +77,14 @@ dependencies {
     def material_version = "1.6.1"
     implementation("com.google.android.material:material:$material_version")
 
+    // Junit
+    def junit_version = "4.13.2"
+    testImplementation("junit:junit:$junit_version")
+
+    // Espresso
+    def espresso_version = "3.5.0"
+    androidTestImplementation("androidx.test.espresso:espresso-core:$espresso_version")
+
     // Coroutines Test
     def coroutines_version = "1.6.4"
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version")

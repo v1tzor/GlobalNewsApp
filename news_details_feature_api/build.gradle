@@ -43,4 +43,12 @@ dependencies {
     // Core
     def core_version = "1.8.0"
     implementation("androidx.core:core-ktx:$core_version")
+
+    // Junit
+    def junit_version = "4.13.2"
+    testImplementation("junit:junit:$junit_version")
+
+    // Espresso
+    def espresso_version = "3.5.0"
+    androidTestImplementation("androidx.test.espresso:espresso-core:$espresso_version")
 }

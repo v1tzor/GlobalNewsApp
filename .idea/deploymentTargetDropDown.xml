@@ -7,11 +7,11 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\Stasa\.android\avd\Pixel_5_API_31.avd" />
+            <value value="C:\Users\Stasa\.android\avd\Huawei_Nova_5t.avd" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-12-07T17:50:20.295352400Z" />
+    <timeTargetWasSelectedWithDropDown value="2022-12-15T20:17:47.696070800Z" />
   </component>
 </project>
