@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Settings -->
+    <dimen name="main_padding_horizontal">15dp</dimen>
+    <dimen name="main_settings_title_margin_vertical">35dp</dimen>
+
+    <dimen name="in_settings_layout_padding_horizontal">16dp</dimen>
+
+    <dimen name="settings_layout_height">65dp</dimen>
+    <dimen name="settings_layout_margin_top">5dp</dimen>
+    <dimen name="settings_title_padding_start">20dp</dimen>
+    <dimen name="between_setting_layout_margin_top">10dp</dimen>
+    <dimen name="source_subtitle_margin_top">20dp</dimen>
+
+    <dimen name="error_title_height">24dp</dimen>
+
+    <!-- Dialogs -->
+    <dimen name="base_dialog_width">312dp</dimen>
+    <dimen name="base_dialog_padding">24dp</dimen>
+    <dimen name="main_dialog_icon_height">24dp</dimen>
+    <dimen name="main_dialog_title_padding_vertical">16dp</dimen>
+    <dimen name="dialog_radio_nested_scroll_view_height">250dp</dimen>
+    <dimen name="dialog_radio_nested_scroll_view_margin_vertical">10dp</dimen>
+</resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Main News  -->
+    <dimen name="main_title_margin_top">35dp</dimen>
+    <dimen name="main_horizontal_padding">15dp</dimen>
+    <dimen name="current_date_title_margin_top">2dp</dimen>
+    <dimen name="category_chip_group_padding_vertical">8dp</dimen>
+    <dimen name="error_title_height">26dp</dimen>
+    <dimen name="chip_group_height">64dp</dimen>
+
+    <!--  News Item  -->
+    <dimen name="news_item_max_width">500dp</dimen>
+    <dimen name="news_item_padding_bottom">10dp</dimen>
+    <dimen name="news_item_inside_padding_horizontal">16dp</dimen>
+    <dimen name="news_image_height">200dp</dimen>
+    <dimen name="news_image_margin">8dp</dimen>
+    <dimen name="content_layout_padding_bottom">16dp</dimen>
+    <dimen name="content_layout_padding_top">8dp</dimen>
+    <dimen name="news_title_padding_vertical">8dp</dimen>
+    <dimen name="published_date_title_height">35dp</dimen>
+    <dimen name="published_date_title_margin_top">8dp</dimen>
+    <dimen name="published_date_title_padding_horizontal">20dp</dimen>
+
+    <dimen name="news_title_placeholder_margin_top">5dp</dimen>
+    <dimen name="source_title_placeholder_width">150dp</dimen>
+    <dimen name="date_title_placeholder_width">150dp</dimen>
+
+    <dimen name="error_state_news_item_padding_horizontal">15dp</dimen>
+    <dimen name="loading_state_news_item_padding_horizontal">20dp</dimen>
+    <dimen name="state_news_item_padding_vertical">10dp</dimen>
+
+    <!--  Other  -->
+    <dimen name="image_view_corner">43dp</dimen>
+
+</resources>

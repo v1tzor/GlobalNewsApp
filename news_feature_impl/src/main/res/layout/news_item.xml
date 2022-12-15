@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:maxWidth="@dimen/news_item_max_width"
+    android:paddingBottom="@dimen/news_item_padding_bottom">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        style="@style/Widget.Material3.CardView.Elevated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/newsImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/news_image_height"
+                android:layout_margin="@dimen/news_image_margin"
+                android:layout_weight="1"
+                android:background="?colorSurfaceVariant"
+                android:contentDescription="@string/news_image_description"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.ImageView.Corner"
+                tools:src="@drawable/test_photo" />
+
+            <LinearLayout
+                android:id="@+id/contentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/news_item_inside_padding_horizontal"
+                android:paddingTop="@dimen/content_layout_padding_top"
+                android:paddingBottom="@dimen/content_layout_padding_bottom">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/sourceTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                    tools:text="Forbes Russia" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/contentTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.8"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="@dimen/news_title_padding_vertical"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                    tools:text="Тиньков сообщил об отказе от российского гражданства" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/publishedDateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/published_date_title_height"
+                    android:layout_marginTop="@dimen/published_date_title_margin_top"
+                    android:background="@drawable/primary_corner_rectangle"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/published_date_title_padding_horizontal"
+                    android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+                    tools:text="Опубликованно - 1 hours ago" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

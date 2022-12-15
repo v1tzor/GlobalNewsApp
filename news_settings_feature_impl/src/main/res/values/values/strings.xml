@@ -1,0 +1,38 @@
+<resources>
+    <string name="feature_name">news_feature_impl</string>
+
+    <string name="defualt_toolbar_title">Популярные новости</string>
+    <string name="settings_button_title_in_toolbar">Настройки</string>
+    <string name="category_view_description">Категория</string>
+    <string name="news_image_description">Фото новости</string>
+
+    <string name="more_detailed_title">Подробнее:</string>
+    <string name="news_tittle">Новость:</string>
+    <string name="no_information_available_title">Информация отстутствует</string>
+    <string name="source_button_title">Перейти к источнику</string>
+    <string name="favorites_button_desc">Избранное</string>
+
+    <string name="tools_time_title">01.01.2022 | 00:00:00</string>
+    <string name="tools_news_title">Предварительный просмотр игры Иглз-Кардиналс: 5 вопросов и ответов с врагом 5-й недели</string>
+    <string name="date_title">Дата публикации:</string>
+    <string name="tools_category_title">Спорт</string>
+    <string name="category_title">Категории:</string>
+    <string name="global_error_image_description">Ошибка</string>
+    <string name="try_again_button_title">Повторить попытку</string>
+
+    <string name="category_breaking_news">Последние</string>
+    <string name="category_world_news">Мир</string>
+    <string name="category_nation_news">Нация</string>
+    <string name="category_business_news">Бизнес</string>
+    <string name="category_technology_news">Технологии</string>
+    <string name="category_entertainment_news">Развлечения</string>
+    <string name="category_sports_news">Спорт</string>
+    <string name="category_science_news">Наука</string>
+    <string name="category_health_news">Здоровье</string>
+    <string name="category_other">Прочее</string>
+    <string name="data_base_exception_title">Ошибка локальной загрузки данных</string>
+    <string name="network_exception_title">Нет подключения к интернету!</string>
+    <string name="service_unavailable_exception_title">Ошибка при работе с сервисом новостей!</string>
+    <string name="other_exception_title">Возникла ошибка при работе приложения!</string>
+
+</resources>

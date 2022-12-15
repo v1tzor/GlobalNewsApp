@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="empty" />
+
+    <string name="main_settings_title">Настройки</string>
+
+    <string name="defualt_category_title">Категория по умолчанию</string>
+    <string name="country_title">Страна новостей</string>
+    <string name="language_title">Язык новостей</string>
+
+    <string name="categories_dialog_main_title">Выберите категорию по умолчанию</string>
+    <string name="language_dialog_main_title">Выберите язык новостей</string>
+    <string name="country_dialog_main_title">Выберите страну новостей</string>
+
+    <string name="data_base_exception">Возникла ошибка при работе с хранилищем</string>
+    <string name="other_exception">Возникла ошибка при работе приложения</string>
+
+    <string name="positive_button_title">ОК</string>
+
+    <string name="main_icon_desc">Иконка настройки</string>
+    <string name="source_settings_title">Источник</string>
+</resources>

@@ -1,0 +1,124 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "ru.aleshin.globalnews"
+        minSdk 23
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+
+        release {
+            storeFile file(properties.getProperty("storeFile", ""))
+            storePassword properties.getProperty("storePassword", "")
+            keyAlias properties.getProperty("keyAlias", "")
+            keyPassword properties.getProperty("keyPassword", "")
+        }
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    // Modules
+    implementation project(":module-injector")
+
+    implementation project(":core")
+    implementation project(":core-db")
+    implementation project(":core-ui")
+
+    implementation project(":news_feature_impl")
+    implementation project(":news_feature_api")
+
+    implementation project(":news_details_feature_api")
+    implementation project(":news_details_feature_impl")
+
+    implementation project(":news_settings_feature_api")
+    implementation project(":news_settings_feature_impl")
+
+    // Dagger
+    def dagger_version = "2.44"
+    implementation("com.google.dagger:dagger:$dagger_version")
+    kapt("com.google.dagger:dagger-compiler:$dagger_version")
+
+    // Room
+    def room_version = "2.4.3"
+    implementation("androidx.room:room-runtime:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+
+    // Cicerone
+    def cicerone_version = "7.1"
+    implementation("com.github.terrakok:cicerone:$cicerone_version")
+
+    // Core
+    def core_version = "1.8.0"
+    implementation("androidx.core:core-ktx:$core_version")
+
+    // Appcompat
+    def appcompat_version = "1.5.1"
+    implementation("androidx.appcompat:appcompat:$appcompat_version")
+
+    // Material
+    def material_version = "1.6.1"
+    implementation("com.google.android.material:material:$material_version")
+
+    // Junit
+    def junit_version = "4.13.2"
+    testImplementation("junit:junit:$junit_version")
+
+    // Espresso
+    def espresso_version = "3.5.0"
+    androidTestImplementation("androidx.test.espresso:espresso-core:$espresso_version")
+
+    // Ext Junit
+    def ext_junit_version = "1.1.4"
+    androidTestImplementation("androidx.test.ext:junit:$ext_junit_version")
+
+    // Firebase crashlytics
+    def firebase_bom_version = "31.1.0"
+    implementation platform("com.google.firebase:firebase-bom:$firebase_bom_version")
+    implementation("com.google.firebase:firebase-crashlytics-ktx")
+    implementation("com.google.firebase:firebase-analytics-ktx")
+
+    // Leakcanary
+    def leakcanary_version = "2.9.1"
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:$leakcanary_version")
+}

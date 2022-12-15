@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Main News  -->
+    <dimen name="main_news_horizontal_padding">12dp</dimen>
+    <dimen name="toolbar_title_padding_end">24dp</dimen>
+    <dimen name="category_item_width">93dp</dimen>
+    <dimen name="category_item_width_with_padding">100dp</dimen>
+    <dimen name="category_item_height">27dp</dimen>
+    <dimen name="category_recycler_padding_start">12dp</dimen>
+    <dimen name="news_item_image_height">110dp</dimen>
+    <dimen name="news_item_inside_horizontal_margin">10dp</dimen>
+    <dimen name="news_item_image_corner_radius">10dp</dimen>
+    <dimen name="news_recycler_margin_top">12dp</dimen>
+    <dimen name="news_item_inside_vertical_margin">4dp</dimen>
+    <dimen name="error_title_height">24dp</dimen>
+
+    <!--  News Detail  -->
+    <dimen name="detail_horizontal_padding">10dp</dimen>
+    <dimen name="top_line_width">35dp</dimen>
+    <dimen name="top_line_height">3dp</dimen>
+    <dimen name="top_line_margin_top">5dp</dimen>
+    <dimen name="card_view_photo_height">150dp</dimen>
+    <dimen name="card_view_photo_margin">8dp</dimen>
+    <dimen name="card_view_photo_corner_radius">15dp</dimen>
+    <dimen name="more_detailed_title_margin_top">10dp</dimen>
+    <dimen name="source_and_favorites_button_height">48dp</dimen>
+    <dimen name="source_and_favorites_button_margin_vertical">4dp</dimen>
+    <dimen name="favorites_button_padding_horizontal">8dp</dimen>
+    <dimen name="favorites_button_margin_vertical">4dp</dimen>
+    <dimen name="favorites_button_margin_start">4dp</dimen>
+    <dimen name="favorites_button_height">48dp</dimen>
+    <dimen name="time_title_drawable_padding">5dp</dimen>
+    <dimen name="category_recycler_padding_horizontal">10dp</dimen>
+    <dimen name="news_item_height">56dp</dimen>
+    <dimen name="news_item_max_width">450dp</dimen>
+    <dimen name="news_item_margin_vertical">8dp</dimen>
+</resources>

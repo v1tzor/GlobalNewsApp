@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  News Detail  -->
+    <dimen name="error_title_height">26dp</dimen>
+    <dimen name="news_image_layout_height">280dp</dimen>
+    <dimen name="details_main_margin_horizontal">12dp</dimen>
+    <dimen name="details_main_margin_vertical">8dp</dimen>
+    <dimen name="back_button_margin">10dp</dimen>
+    <dimen name="back_button_elevation">5dp</dimen>
+    <dimen name="source_layout_padding_vertical">20dp</dimen>
+    <dimen name="details_content_main_padding_horizontal">16dp</dimen>
+    <dimen name="source_title_margin_end">8dp</dimen>
+    <dimen name="source_button_height">43dp</dimen>
+    <dimen name="details_divider_padding_horizontal">8dp</dimen>
+    <dimen name="details_news_title_text_size">20sp</dimen>
+    <dimen name="details_date_time_layout_margin_vertical">20dp</dimen>
+    <dimen name="details_in_date_time_layout_item_height">43dp</dimen>
+
+    <!--  Other  -->
+    <dimen name="image_view_corner">43dp</dimen>
+
+</resources>

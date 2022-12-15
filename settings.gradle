@@ -1,0 +1,26 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "GlobalNews"
+include ':app'
+include ':module-injector'
+include ':core'
+include ':core-db'
+include ':news_feature_api'
+include ':news_feature_impl'
+include ':news_settings_feature_api'
+include ':news_settings_feature_impl'
+include ':core-ui'
+include ':news_details_feature_impl'
+include ':news_details_feature_api'

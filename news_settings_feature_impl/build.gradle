@@ -1,0 +1,94 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 23
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    // Modules
+    implementation project(":module-injector")
+    implementation project(":core")
+    implementation project(":core-db")
+    implementation project(":core-ui")
+    implementation project(":news_settings_feature_api")
+
+    // Dagger
+    def dagger_version = "2.44"
+    implementation("com.google.dagger:dagger:$dagger_version")
+    kapt("com.google.dagger:dagger-compiler:$dagger_version")
+
+    // Cicerone
+    def cicerone_version = "7.1"
+    implementation("com.github.terrakok:cicerone:$cicerone_version")
+
+    // Lifecycle
+    def lifecycles_version = "2.5.1"
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycles_version")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycles_version")
+
+    // Core
+    def core_version = "1.8.0"
+    implementation("androidx.core:core-ktx:$core_version")
+
+    // Appcompat
+    def appcompat_version = "1.5.1"
+    implementation("androidx.appcompat:appcompat:$appcompat_version")
+
+    // Material
+    def material_version = "1.7.0"
+    implementation("com.google.android.material:material:$material_version")
+
+    // Test coroutines
+    def coroutines_test_version = "1.6.1"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_test_version"
+
+    // Junit
+    def junit_version = "4.13.2"
+    testImplementation("junit:junit:$junit_version")
+
+    // Espresso
+    def espresso_version = "3.5.0"
+    androidTestImplementation("androidx.test.espresso:espresso-core:$espresso_version")
+
+    // Fragment Test
+    def fragment_version = "1.5.4"
+    androidTestImplementation("androidx.fragment:fragment-testing:$fragment_version")
+
+    // Ext Junit
+    def ext_junit_version = "1.1.4"
+    androidTestImplementation("androidx.test.ext:junit:$ext_junit_version")
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+}

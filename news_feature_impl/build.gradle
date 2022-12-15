@@ -1,0 +1,129 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 23
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildTypes.each {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+
+        def globalNewsApiKey = properties.getProperty("global_news_api_key", "")
+        def globalNewsBaseUrl = properties.getProperty("global_news_base_url", "")
+
+        it.buildConfigField 'String', "GNEWS_API_KEY", globalNewsApiKey
+        it.buildConfigField 'String', "GNEWS_BASE_URL", globalNewsBaseUrl
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    // Modules
+    implementation project(":module-injector")
+
+    implementation project(":core")
+    implementation project(":core-db")
+    implementation project(":core-ui")
+
+    implementation project(":news_feature_api")
+
+    implementation project(":news_settings_feature_api")
+    implementation project(":news_details_feature_api")
+
+    // Dagger
+    def dagger_version = "2.44"
+    implementation("com.google.dagger:dagger:$dagger_version")
+    kapt("com.google.dagger:dagger-compiler:$dagger_version")
+
+    // Shimmer
+    def shimmer_version = "0.5.0"
+    implementation("com.facebook.shimmer:shimmer:$shimmer_version")
+
+    // Cicerone
+    def cicerone_version = "7.1"
+    implementation("com.github.terrakok:cicerone:$cicerone_version")
+
+    // Retrofit
+    def retrofit_version = "2.9.0"
+    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
+
+    // OkHttpInterceptor
+    def logging_interceptor_version = "5.0.0-alpha.10"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
+
+    // Paging 3
+    def paging_version = "3.1.1"
+    implementation "androidx.paging:paging-runtime:$paging_version"
+
+    // Lifecycle
+    def lifecycles_version = "2.5.1"
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycles_version")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycles_version")
+
+    // Refresh layout
+    def refresh_layout_version = "1.1.0"
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:$refresh_layout_version")
+
+    // Core
+    def core_version = "1.8.0"
+    implementation("androidx.core:core-ktx:$core_version")
+
+    // Appcompat
+    def appcompat_version = "1.5.1"
+    implementation("androidx.appcompat:appcompat:$appcompat_version")
+
+    // Material
+    def material_version = "1.7.0"
+    implementation("com.google.android.material:material:$material_version")
+
+    // Test coroutines
+    def coroutines_test_version = "1.6.1"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_test_version"
+
+    // Junit
+    def junit_version = "4.13.2"
+    testImplementation("junit:junit:$junit_version")
+
+    // Turbine
+    def turbine_version = "0.12.1"
+    testImplementation("app.cash.turbine:turbine:$turbine_version")
+
+    // Espresso
+    def espresso_version = "3.5.0"
+    androidTestImplementation("androidx.test.espresso:espresso-core:$espresso_version")
+
+    // Ext Junit
+    def ext_junit_version = "1.1.4"
+    androidTestImplementation("androidx.test.ext:junit:$ext_junit_version")
+}

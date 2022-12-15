@@ -1,0 +1,25 @@
+<resources>
+    <string name="feature_name">news_feature_impl</string>
+
+    <string name="news_header">Новости</string>
+    <string name="source_button_title">Перейти к источнику</string>
+    <string name="try_again_button_title">Повторить попытку</string>
+    <string name="date_title">Дата издания</string>
+    <string name="error_title">Ошибка загрузки!</string>
+
+    <string name="no_information_available_title">Информация отстутствует</string>
+
+    <string name="network_exception_title">Нет подключения к интернету!</string>
+    <string name="service_unavailable_exception_title">Возникла ошибка при получении новостей!</string>
+    <string name="data_base_exception_title">Ошибка локальной загрузки данных</string>
+    <string name="other_exception_title">Возникла ошибка при работе приложения!</string>
+
+    <string name="back_button_desc">Вернуться назад</string>
+    <string name="news_image_description">Фото новости</string>
+
+    <string name="tools_time_title">Nov 1, 2022 10:23:00</string>
+    <string name="tools_current_date_title">Wednesday, November, 12</string>
+
+    <string name="empty" />
+
+</resources>

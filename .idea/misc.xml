@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/app/src/main/res/drawable/ic_logo.xml" value="0.294" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/app/src/main/res/drawable/splash_screen.xml" value="0.294" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/app/src/main/res/layout/bottom_nav_fragment.xml" value="0.2984181274048739" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/app/src/main/res/menu/bottom_nav_view_items.xml" value="0.23581081081081082" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/core-ui/src/main/res/drawable/alert_dialog_container.xml" value="0.2715" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_detail_feature_impl/src/main/res/drawable/background_button.xml" value="0.298" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_detail_feature_impl/src/main/res/drawable/bottom_sheet_rectangle.xml" value="0.332" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_detail_feature_impl/src/main/res/drawable/corner_rectangle.xml" value="0.298" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_detail_feature_impl/src/main/res/layout/bottom_sheet_fragment_news_detail.xml" value="0.33" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_detail_feature_impl/src/main/res/layout/line.xml" value="0.36354166666666665" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_favorites_feature_impl/src/main/res/drawable/favorites_item_background.xml" value="0.3645" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_favorites_feature_impl/src/main/res/drawable/favorites_news_image_background.xml" value="0.359" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_favorites_feature_impl/src/main/res/drawable/ic_no_photography.xml" value="0.359" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_favorites_feature_impl/src/main/res/layout/favorites_fragmnet.xml" value="0.33" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_favorites_feature_impl/src/main/res/layout/favorites_news_item.xml" value="0.1" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_favorites_feature_impl/src/main/res/layout/line.xml" value="0.33" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_api/src/main/res/layout/activity_main2.xml" value="0.36354166666666665" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/drawable/background_button.xml" value="0.308" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/drawable/bottom_sheet_background.xml" value="0.2855" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/drawable/corner_image.xml" value="0.306" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/drawable/corner_rectangle.xml" value="0.316" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/drawable/ic_empty.xml" value="0.3645" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/drawable/ic_favorite_inactive.xml" value="0.3645" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/drawable/news_rectangle.xml" value="0.3645" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/drawable/placeholder.xml" value="0.308" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/drawable/primary_corner_rectangle.xml" value="0.3345" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/drawable/round_icon.xml" value="0.2695" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/drawable/round_outline.xml" value="0.316" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/drawable/surface_corner_rectangle.xml" value="0.308" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/font/poppins_bold.xml" value="0.3232150491663104" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/layout/bottom_sheet_fragment_news_detail.xml" value="0.36354166666666665" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/layout/category_item.xml" value="0.5" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/layout/error_news_item.xml" value="0.2984181274048739" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/layout/line.xml" value="0.36354166666666665" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/layout/loading_news_item.xml" value="0.33" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/layout/news_details_bottom_sheet_fragment.xml" value="0.36354166666666665" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/layout/news_details_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/layout/news_details_sheet_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/layout/news_fragment.xml" value="0.2984181274048739" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/layout/news_item.xml" value="0.33" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/layout/news_progress_item.xml" value="0.36354166666666665" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/layout/placeholder_news_item.xml" value="0.33" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/layout/try_again_news_item.xml" value="0.36354166666666665" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_feature_impl/src/main/res/menu/toolbar_items.xml" value="0.36354166666666665" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/drawable/alert_dialog_container.xml" value="0.308" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/drawable/corner_rectangle.xml" value="0.308" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/drawable/drop_down_spinner_item.xml" value="0.3075" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/drawable/ic_back.xml" value="0.3075" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/drawable/ic_global_error.xml" value="0.2965" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/drawable/outline_spinner_item.xml" value="0.3075" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/drawable/spinner_item.xml" value="0.3315" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/layout/base_dialog_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/layout/categories_dialog_fragment.xml" value="0.5" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/layout/countries_dialog_fragment.xml" value="0.2984181274048739" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/layout/country_dialog_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/layout/language_dialog_fragment.xml" value="0.32314814814814813" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/layout/languages_dialog_fragment.xml" value="0.2984181274048739" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/layout/line.xml" value="0.3625" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/layout/radio_button_item.xml" value="0.5" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/layout/settings_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/layout/spinner_dropdown_item.xml" value="0.36354166666666665" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/layout/spinner_drowdown_item.xml" value="0.36354166666666665" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/layout/spinner_header_item.xml" value="0.36354166666666665" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/layout/spinner_item.xml" value="0.3625" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/menu/empty.xml" value="0.36354166666666665" />
+        <entry key="..\:/Users/Stasa/Desktop/Android_Devoloped/GlobalNews/news_settings_feature_impl/src/main/res/menu/settings_toolbar_items.xml" value="0.36354166666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="dagger.Module" />
+    </list>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,6 @@
+<resources>
+    <!--Splash Screen-->
+    <style name="Theme.App.GlobalNews.Launcher" parent="Theme.App.GlobalNews">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+</resources>

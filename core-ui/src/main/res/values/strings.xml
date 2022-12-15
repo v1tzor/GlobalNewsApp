@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="australia_country">Австралия</string>
+    <string name="russian_federation_country">Российская Федерация</string>
+    <string name="brazil_country">Бразилия</string>
+    <string name="canada_country">Канада</string>
+    <string name="switzerland_country">Швейцария</string>
+    <string name="chine_country">Китай</string>
+    <string name="germany_country">Германия</string>
+    <string name="egypt_country">Египт</string>
+    <string name="spain_country">Испания</string>
+    <string name="france_country">Франция</string>
+    <string name="united_kingdom_country">Великобритания</string>
+    <string name="greece_country">Греция</string>
+    <string name="hong_kong_country">Гонконг</string>
+    <string name="ireland_country">Ирландия</string>
+    <string name="israel_country">Израиль</string>
+    <string name="india_country">Индия</string>
+    <string name="italy_country">Италия</string>
+    <string name="japan_country">Япония</string>
+    <string name="netherlands_country">Нидерланды</string>
+    <string name="norway_country">Норвегия</string>
+    <string name="peru_country">Перу</string>
+    <string name="philippines_country">Филиппины</string>
+    <string name="pakistan_country">Пакистан</string>
+    <string name="portugal_country">Португалия</string>
+    <string name="romania_country">Румыния</string>
+    <string name="sweden_country">Швеция</string>
+    <string name="singapore_country">Сингапур</string>
+    <string name="taiwan_country">Тайвань</string>
+    <string name="ukraine_country">Украина</string>
+    <string name="united_states_country">США</string>
+
+    <string name="arabic_language">Арабский</string>
+    <string name="german_language">Немецкий</string>
+    <string name="greek_language">Греческий</string>
+    <string name="english_language">Английский</string>
+    <string name="spanish_language">Испанский</string>
+    <string name="french_language">Французский</string>
+    <string name="hebrew_language">Иврит</string>
+    <string name="hindi_language">Хинди</string>
+    <string name="italian_language">Итальянский</string>
+    <string name="japanese_language">Японский</string>
+    <string name="malayalam_language">Малаялам</string>
+    <string name="marathi_language">Маратхи</string>
+    <string name="dutch_language">Нидерландский</string>
+    <string name="norwegian_language">Норвежский</string>
+    <string name="portuguese_language">Португальский</string>
+    <string name="romanian_language">Румынский</string>
+    <string name="russian_language">Русский</string>
+    <string name="swedish_language">Шведский</string>
+    <string name="tamil_language">Тамильский</string>
+    <string name="telugu_language">Телугу</string>
+    <string name="ukrainian_language">Украинский</string>
+    <string name="chinese_language">Китайский</string>
+
+    <string name="category_breaking_news">Последние</string>
+    <string name="category_world_news">Мировые</string>
+    <string name="category_nation_news">Национальные</string>
+    <string name="category_sports_news">Спортивные</string>
+    <string name="category_science_news">Научные</string>
+    <string name="category_health_news">О здоровье</string>
+    <string name="category_business_news">О бизнесе</string>
+    <string name="category_technology_news">Про технологии</string>
+    <string name="category_entertainment_news">Про развлечения</string>
+    <string name="category_other">Прочие</string>
+</resources>

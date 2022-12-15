@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mainTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/main_settings_title_margin_vertical"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="15dp"
+        android:text="@string/main_settings_title"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/main_padding_horizontal"
+                android:text="@string/main_settings_title"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+            <LinearLayout
+                android:id="@+id/categoryLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/settings_layout_height"
+                android:layout_marginHorizontal="@dimen/main_padding_horizontal"
+                android:layout_marginTop="@dimen/settings_layout_margin_top"
+                android:background="@drawable/settings_corner_rectangle"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/in_settings_layout_padding_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/defualt_category_title"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+                <TextView
+                    android:id="@+id/categoryTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:gravity="end|center_vertical"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    tools:text="Национальные" />
+
+            </LinearLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/source_subtitle_margin_top"
+                android:alpha="0.7"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/main_padding_horizontal"
+                android:text="@string/source_settings_title"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+            <LinearLayout
+                android:id="@+id/countryLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/settings_layout_height"
+                android:layout_marginHorizontal="@dimen/main_padding_horizontal"
+                android:layout_marginTop="@dimen/settings_layout_margin_top"
+                android:background="@drawable/settings_corner_rectangle"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/in_settings_layout_padding_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/country_title"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+                <TextView
+                    android:id="@+id/countryTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:paddingStart="@dimen/settings_title_padding_start"
+                    android:gravity="end|center_vertical"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    tools:text="Российская федерация" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/languageLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/settings_layout_height"
+                android:layout_marginHorizontal="@dimen/main_padding_horizontal"
+                android:layout_marginTop="@dimen/between_setting_layout_margin_top"
+                android:background="@drawable/settings_corner_rectangle"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/in_settings_layout_padding_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/language_title"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+                <TextView
+                    android:id="@+id/languageTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:gravity="end|center_vertical"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    tools:text="Русский" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/errorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/errorTitle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/error_title_height"
+            android:layout_gravity="bottom"
+            android:background="?colorErrorContainer"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/other_exception"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="?colorOnErrorContainer" />
+
+    </FrameLayout>
+
+</LinearLayout>

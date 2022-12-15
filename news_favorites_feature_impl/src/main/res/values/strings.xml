@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="empty"/>
+    <string name="defualt_toolbar_title">Избранные</string>
+    <string name="news_image_desc">Фотография новости</string>
+    <string name="favorites_button_desc">Удалить из избранных</string>
+    <string name="no_information_available_title">Информация отсутствует</string>
+    <string name="no_favorites_news_title">Отсутсвуют избранные новости</string>
+</resources>

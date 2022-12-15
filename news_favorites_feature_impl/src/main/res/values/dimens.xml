@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_title_padding_end">24dp</dimen>
+    <dimen name="favorites_item_background_radius">14dp</dimen>
+    <dimen name="news_image_size">100dp</dimen>
+    <dimen name="global_horizontal_padding">10dp</dimen>
+    <dimen name="defualt_horizontal_margin">10dp</dimen>
+    <dimen name="favorites_button_size">26dp</dimen>
+</resources>
