@@ -4,29 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:transitionName="shared_element_container">
+    android:orientation="vertical">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/mainTitle"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/main_title_margin_top"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="@dimen/main_horizontal_padding"
-        android:text="@string/news_header"
-        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/currentDateTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:alpha="0.7"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="@dimen/main_horizontal_padding"
-        android:paddingTop="@dimen/current_date_title_margin_top"
-        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-        tools:text="@string/tools_current_date_title" />
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="0dp"
+        app:title="@string/news_header"
+        app:titleCentered="true" />
 
     <HorizontalScrollView
         android:id="@+id/chipScrollView"
@@ -37,7 +23,7 @@
         android:scrollbars="none">
 
         <com.google.android.material.chip.ChipGroup
-            android:id="@+id/category_chip_group"
+            android:id="@+id/categoryChipGroup"
             style="@style/Widget.Material3.ChipGroup"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/chip_group_height"
@@ -195,5 +181,6 @@
         android:textColor="?colorOnErrorContainer"
         android:visibility="gone"
         tools:text="@string/other_exception_title" />
+
 
 </LinearLayout>

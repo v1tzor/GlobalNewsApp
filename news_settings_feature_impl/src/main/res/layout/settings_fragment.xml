@@ -3,22 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/mainTitle"
+    <com.google.android.material.appbar.MaterialToolbar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/main_settings_title_margin_vertical"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="15dp"
-        android:text="@string/main_settings_title"
-        android:textAppearance="@style/TextAppearance.Material3.HeadlineLarge" />
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="0dp"
+        app:title="@string/main_settings_title"
+        app:titleCentered="true" />
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/scroll_view_margin_top"
         android:layout_weight="1">
 
         <LinearLayout

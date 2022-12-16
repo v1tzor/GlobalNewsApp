@@ -60,6 +60,12 @@
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Material3.SmallComponent</item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Material3.MediumComponent</item>
 
-        <item name="android:statusBarColor">?android:colorBackground</item>
+        <item name="toolbarStyle">@style/Widget.Material3.Toolbar.Night</item>
+
+        <item name="android:statusBarColor">?colorSurface</item>
+    </style>
+
+    <style name="Widget.Material3.Toolbar.Night" parent="Widget.Material3.Toolbar.Surface">
+        <item name="android:background">?colorSurface</item>
     </style>
 </resources>

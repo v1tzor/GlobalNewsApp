@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
@@ -27,9 +26,9 @@
                 android:layout_height="@dimen/news_image_height"
                 android:layout_margin="@dimen/news_image_margin"
                 android:layout_weight="1"
+                android:background="?colorSurfaceVariant"
                 android:contentDescription="@string/news_image_description"
                 android:scaleType="centerCrop"
-                android:background="?colorSurfaceVariant"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.ImageView.Corner" />
 
             <LinearLayout

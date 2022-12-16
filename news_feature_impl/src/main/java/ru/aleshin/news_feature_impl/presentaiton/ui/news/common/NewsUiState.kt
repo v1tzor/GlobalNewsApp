@@ -21,7 +21,6 @@ internal sealed class NewsUiState {
             if (!isLoading) recyclerSwipeRefresh.isRefreshing = false
             recyclerSwipeRefresh.isVisible = !isLoading
             shimmerFrameLayout.isVisible = isLoading
-            currentDateTitle.text = fetchCurrentDate()
         }
     }
 
@@ -64,9 +63,4 @@ internal sealed class NewsUiState {
     }
 
     object Empty : Abstract(false)
-}
-
-fun fetchCurrentDate(): String {
-    val dateFormat = SimpleDateFormat("EEE, d MMM yyyy", Locale.getDefault())
-    return dateFormat.format(Calendar.getInstance().time)
 }

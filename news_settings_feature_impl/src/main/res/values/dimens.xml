@@ -21,4 +21,5 @@
     <dimen name="main_dialog_title_padding_vertical">16dp</dimen>
     <dimen name="dialog_radio_nested_scroll_view_height">250dp</dimen>
     <dimen name="dialog_radio_nested_scroll_view_margin_vertical">10dp</dimen>
+    <dimen name="scroll_view_margin_top">20dp</dimen>
 </resources>

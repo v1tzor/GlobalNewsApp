@@ -1,12 +1,14 @@
 package ru.aleshin.news_feature_impl.presentaiton.ui.news
 
 import android.os.Bundle
+import ru.aleshin.core.extensions.addChip
 import ru.aleshin.core.extensions.checkedChipButtonTag
 import ru.aleshin.core.platform.fragments.BaseFragmentWithViewModel
 import ru.aleshin.news_feature_impl.databinding.NewsFragmentBinding
 import ru.aleshin.news_feature_impl.di.holder.NewsComponentHolder
 import ru.aleshin.news_feature_impl.presentaiton.ui.news.adapters.NewsAdapter
 import ru.aleshin.news_feature_impl.presentaiton.ui.news.adapters.NewsLoadStateAdapter
+import ru.aleshin.news_settings_feature_api.domain.Categories
 import ru.aleshin.news_settings_feature_api.domain.convertToCategory
 import javax.inject.Inject
 
@@ -63,6 +65,10 @@ internal class NewsFragment : BaseFragmentWithViewModel<NewsFragmentBinding, New
         newsRecycler.adapter = newsAdapter
 
         recyclerSwipeRefresh.setOnRefreshListener { newsAdapter.refresh() }
+
+        Categories.values().forEach { categories: Categories ->
+            categoryChipGroup.addChip(categories.title, categories.data)
+        }
 
         categoryChipGroup.setOnCheckedStateChangeListener { group, _ ->
             viewModel.changedCategory(group.checkedChipButtonTag().convertToCategory())
