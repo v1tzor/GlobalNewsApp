@@ -66,10 +66,6 @@ internal class NewsFragment : BaseFragmentWithViewModel<NewsFragmentBinding, New
 
         recyclerSwipeRefresh.setOnRefreshListener { newsAdapter.refresh() }
 
-        Categories.values().forEach { categories: Categories ->
-            categoryChipGroup.addChip(categories.title, categories.data)
-        }
-
         categoryChipGroup.setOnCheckedStateChangeListener { group, _ ->
             viewModel.changedCategory(group.checkedChipButtonTag().convertToCategory())
         }
