@@ -1,4 +1,4 @@
-![](https://i.imgur.com/UcJEitD.png)
+![](https://i.imgur.com/l8J6ryt.png)
 
 # GlobalNewsApp
 
