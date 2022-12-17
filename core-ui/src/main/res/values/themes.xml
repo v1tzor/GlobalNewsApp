@@ -60,10 +60,12 @@
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Material3.SmallComponent</item>
         
         <item name="toolbarStyle">@style/Widget.Material3.Toolbar.Light</item>
+
         <item name="android:statusBarColor">?colorSurfaceVariant</item>
     </style>
     
     <style name="Widget.Material3.Toolbar.Light" parent="Widget.Material3.Toolbar.Surface">
         <item name="android:background">@color/md_theme_light_surfaceVariant</item>
     </style>
+
 </resources>

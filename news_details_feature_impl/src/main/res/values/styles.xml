@@ -3,4 +3,9 @@
     <style name="ShapeAppearanceOverlay.ImageView.Corner" parent="">
         <item name="cornerSize">8dp</item>
     </style>
+
+    <style name="ShapeAppearanceOverlay.ImageView.CornerBottom" parent="">
+        <item name="cornerSizeBottomLeft">16dp</item>
+        <item name="cornerSizeBottomRight">16dp</item>
+    </style>
 </resources>

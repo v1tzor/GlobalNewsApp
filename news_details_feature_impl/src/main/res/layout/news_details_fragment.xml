@@ -4,167 +4,154 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:transitionName="shared_element_container">
+    android:background="?colorSurface"
+    android:orientation="vertical">
 
-    <FrameLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_weight="0"
-        android:layout_height="@dimen/news_image_layout_height"
-        android:layout_marginHorizontal="@dimen/details_main_margin_horizontal"
-        android:layout_marginTop="@dimen/details_main_margin_vertical">
+        android:layout_height="?attr/actionBarSize"
+        app:menu="@menu/toolbar_items"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/main_title"
+        app:titleCentered="true" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/backButton"
-            style="@style/Widget.Material3.Button.IconButton.Filled"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/back_button_margin"
-            android:backgroundTint="?colorSurface"
-            android:contentDescription="@string/back_button_desc"
-            android:elevation="@dimen/back_button_elevation"
-            app:icon="@drawable/ic_arrow_back"
-            app:iconTint="?colorOnSurface" />
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/newsImage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="?colorSurfaceVariant"
-            android:contentDescription="@string/news_image_description"
-            android:scaleType="centerCrop"
-            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.ImageView.Corner"
-            tools:ignore="ImageContrastCheck"
-            tools:src="@drawable/missing_photo" />
-
-    </FrameLayout>
-
-    <com.google.android.material.card.MaterialCardView
-        style="@style/Widget.Material3.CardView.Elevated"
+    <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="@dimen/details_main_margin_horizontal"
-        android:layout_marginVertical="@dimen/details_main_margin_vertical"
-        app:cardElevation="0dp">
+        android:layout_marginHorizontal="@dimen/details_divider_padding_horizontal"
+        android:alpha="0.2" />
 
-        <ScrollView
-            android:id="@+id/contentLayout"
+    <ScrollView
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:visibility="visible">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:visibility="visible">
+            android:orientation="vertical">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/newsImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/news_image_layout_height"
+                android:background="?colorSurface"
+                android:contentDescription="@string/news_image_description"
+                android:elevation="@dimen/news_image_elevation"
+                android:paddingHorizontal="@dimen/details_main_margin_horizontal"
+                android:paddingTop="@dimen/news_image_padding_top"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.ImageView.Corner"
+                tools:ignore="ImageContrastCheck"
+                tools:src="@drawable/missing_photo" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="@dimen/details_content_main_padding_horizontal"
-                    android:paddingVertical="@dimen/source_layout_padding_vertical">
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/sourceTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="@dimen/source_title_margin_end"
-                        android:layout_weight="1"
-                        android:ellipsize="end"
-                        android:gravity="center_vertical"
-                        android:maxLines="2"
-                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                        android:textColor="?colorPrimary"
-                        tools:text="IPhones.ru" />
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/sourceButton"
-                        style="@style/Widget.Material3.Button.ElevatedButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="48dp"
-                        android:layout_gravity="bottom"
-                        android:layout_weight="0"
-                        android:text="@string/source_button_title"
-                        android:visibility="visible" />
-
-                </LinearLayout>
-
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/details_divider_padding_horizontal"
-                    android:alpha="0.2" />
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/details_content_main_padding_horizontal"
+                android:paddingVertical="@dimen/source_layout_padding_vertical">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/contentTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="16dp"
+                    android:id="@+id/sourceTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/source_title_margin_end"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
                     android:gravity="center_vertical"
-                    android:paddingHorizontal="@dimen/details_content_main_padding_horizontal"
-                    android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-                    android:textSize="@dimen/details_news_title_text_size"
-                    tools:text="Состоялся официальный релиз долгожданного шутера Call of Duty: Modern Warfare II.
-Если кто-то по каким-либо причинам думал, что перед нами простой ремейк, то это не так. По сути, это новая история с теми же персонажами, имеющая общие корни, но по фак..." />
+                    android:maxLines="2"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                    android:textColor="?colorPrimary"
+                    tools:text="IPhones.ru" />
 
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/details_divider_padding_horizontal"
-                    android:alpha="0.5" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/details_date_time_layout_margin_vertical"
-                    android:orientation="horizontal"
-                    android:paddingHorizontal="@dimen/details_content_main_padding_horizontal"
-                    android:visibility="visible">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="@dimen/details_in_date_time_layout_item_height"
-                        android:layout_weight="0"
-                        android:gravity="center_vertical"
-                        android:text="@string/date_title"
-                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
-
-                    <TextView
-                        android:id="@+id/timeTitle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="end"
-                        android:text="@string/no_information_available_title"
-                        android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
-                        tools:text="@string/tools_time_title" />
-
-                </LinearLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/sourceButton"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="0"
+                    android:text="@string/source_button_title"
+                    android:visibility="visible" />
 
             </LinearLayout>
 
-        </ScrollView>
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/details_divider_padding_horizontal"
+                android:alpha="0.2" />
 
-    </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/contentTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/details_content_main_padding_horizontal"
+                android:paddingVertical="16dp"
+                android:text="@string/no_information_available_title"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textSize="@dimen/details_news_title_text_size"
+                tools:text="@string/tools_content" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/details_divider_padding_horizontal"
+                android:alpha="0.2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/details_date_time_layout_margin_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/details_content_main_padding_horizontal"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/details_in_date_time_layout_item_height"
+                    android:layout_weight="0"
+                    android:gravity="center_vertical"
+                    android:text="@string/date_title"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+                <TextView
+                    android:id="@+id/timeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/no_information_available_title"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                    tools:text="@string/tools_time_title" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <FrameLayout
         android:id="@+id/errorLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="0"
-        android:visibility="gone">
+        android:visibility="invisible">
 
         <TextView
             android:id="@+id/errorTitle"
             android:layout_width="match_parent"
             android:layout_height="@dimen/error_title_height"
+            android:layout_gravity="bottom"
             android:background="?colorErrorContainer"
             android:ellipsize="end"
             android:gravity="center"
-            android:layout_gravity="bottom"
             android:maxLines="1"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             android:textColor="?colorOnErrorContainer"

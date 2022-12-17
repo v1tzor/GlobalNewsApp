@@ -16,7 +16,7 @@ import ru.aleshin.news_details_feature_impl.navigations.NavigationManager
 import ru.aleshin.news_details_feature_impl.presentation.ui.details.NewsDetailsViewModel
 import ru.aleshin.news_details_feature_impl.presentation.ui.details.common.DetailsRequestHandler
 import ru.aleshin.news_details_feature_impl.presentation.ui.details.common.DetailsUiState
-import ru.aleshin.news_details_feature_impl.presentation.ui.details.communications.NewsDetailsStateCommunicator
+import ru.aleshin.news_details_feature_impl.presentation.ui.details.communications.NewsDetailsCommunications
 
 /**
  * @author Stanislav Aleshin on 10.12.2022.
@@ -25,7 +25,7 @@ internal class NewsDetailsViewModelTest {
 
     private lateinit var interactor: FakeDetailsInteractor
     private lateinit var requestHandler: DetailsRequestHandler
-    private lateinit var stateCommunicator: FakeNewsDetailsStateCommunicator
+    private lateinit var communications: FakeNewsDetailsCommunications
     private lateinit var navigationManager: FakeNavigationManager
     private lateinit var coroutineManager: TestCoroutineManager
     private lateinit var viewModel: NewsDetailsViewModel
@@ -33,15 +33,15 @@ internal class NewsDetailsViewModelTest {
     @Before
     fun setUp() {
         interactor = FakeDetailsInteractor()
-        stateCommunicator = FakeNewsDetailsStateCommunicator()
+        communications = FakeNewsDetailsCommunications()
         navigationManager = FakeNavigationManager()
         coroutineManager = TestCoroutineManager()
-        requestHandler = DetailsRequestHandler.Base(stateCommunicator, coroutineManager)
+        requestHandler = DetailsRequestHandler.Base(communications, coroutineManager)
 
         viewModel = NewsDetailsViewModel(
             interactor,
             requestHandler,
-            stateCommunicator,
+            communications,
             navigationManager,
             coroutineManager
         )
@@ -49,51 +49,99 @@ internal class NewsDetailsViewModelTest {
 
     @Test
     fun test_init_first_start_success() {
-        stateCommunicator.changedStateList.add(DetailsUiState.Empty)
+        communications.changedStateList.add(DetailsUiState.Empty)
         interactor.currentNews = NewsDetailsEntity("1", "1", "1", "1", "1")
 
         viewModel.init(true)
 
         assertEquals(1, interactor.fetchNewsCalledCount)
 
-        assertEquals(2, stateCommunicator.changedStateList.size)
-        assertEquals(true, stateCommunicator.changedStateList[0] is DetailsUiState.Empty)
-        assertEquals(true, stateCommunicator.changedStateList[1] is DetailsUiState.News)
+        assertEquals(2, communications.changedStateList.size)
+        assertEquals(true, communications.changedStateList[0] is DetailsUiState.Empty)
+        assertEquals(true, communications.changedStateList[1] is DetailsUiState.News)
+
+        assertEquals(1, communications.changedNewsList.size)
+        assertEquals(
+            NewsDetailsEntity("1", "1", "1", "1", "1"),
+            communications.changedNewsList[0]
+        )
     }
 
     @Test
     fun test_init_first_start_with_error() {
-        stateCommunicator.changedStateList.add(DetailsUiState.Empty)
+        communications.changedStateList.add(DetailsUiState.Empty)
         interactor.expectingErrorWhileFetchNews(true)
 
         viewModel.init(true)
 
         assertEquals(1, interactor.fetchNewsCalledCount)
 
-        assertEquals(2, stateCommunicator.changedStateList.size)
-        assertEquals(true, stateCommunicator.changedStateList[0] is DetailsUiState.Empty)
-        assertEquals(true, stateCommunicator.changedStateList[1] is DetailsUiState.Error)
+        assertEquals(2, communications.changedStateList.size)
+        assertEquals(true, communications.changedStateList[0] is DetailsUiState.Empty)
+        assertEquals(true, communications.changedStateList[1] is DetailsUiState.Error)
+
+        assertEquals(0, communications.changedNewsList.size)
     }
 
     @Test
     fun test_init_second_start() {
-        stateCommunicator.changedStateList.add(DetailsUiState.Empty)
-        stateCommunicator.changedStateList.add(
-            DetailsUiState.News(NewsDetailsEntity("1", "1", "1", "1", "1"))
-        )
+        communications.changedStateList.add(DetailsUiState.Empty)
+        communications.changedStateList.add(DetailsUiState.News)
+        communications.changedNewsList.add(NewsDetailsEntity("1", "1", "1", "1", "1"))
 
         viewModel.init(false)
 
         assertEquals(0, interactor.fetchNewsCalledCount)
-        assertEquals(2, stateCommunicator.changedStateList.size)
+
+        assertEquals(2, communications.changedStateList.size)
+        assertEquals(1, communications.changedNewsList.size)
     }
 
     @Test
     fun test_press_back_button() {
         viewModel.pressBackButton()
 
-        assertEquals(true, navigationManager.isNavigateToBackScreen)
         assertEquals(1, navigationManager.navigateToBackCalledCount)
+    }
+
+    @Test
+    fun test_press_source_button_success() {
+        communications.changedStateList.add(DetailsUiState.News)
+        communications.changedNewsList.add(NewsDetailsEntity("1", "1", "1", "1", "1"))
+
+        viewModel.pressSourceButton()
+
+        assertEquals(1, navigationManager.navigateToNewsUrlCalledCount)
+    }
+
+    @Test
+    fun test_press_source_button_with_error() {
+        communications.changedStateList.add(DetailsUiState.Error)
+        communications.changedNewsList.add(NewsDetailsEntity("1", "1", "1", "1", "1"))
+
+        viewModel.pressSourceButton()
+
+        assertEquals(0, navigationManager.navigateToNewsUrlCalledCount)
+    }
+
+    @Test
+    fun test_press_share_button_success() {
+        communications.changedStateList.add(DetailsUiState.News)
+        communications.changedNewsList.add(NewsDetailsEntity("1", "1", "1", "1", "1"))
+
+        viewModel.pressShareButton()
+
+        assertEquals(1, navigationManager.navigateToSharingScreenCalledCount)
+    }
+
+    @Test
+    fun test_press_share_button_with_error() {
+        communications.changedStateList.add(DetailsUiState.Error)
+        communications.changedNewsList.add(NewsDetailsEntity("1", "1", "1", "1", "1"))
+
+        viewModel.pressShareButton()
+
+        assertEquals(0, navigationManager.navigateToSharingScreenCalledCount)
     }
 
     private class FakeDetailsInteractor : DetailsInteractor {
@@ -117,34 +165,61 @@ internal class NewsDetailsViewModelTest {
         }
     }
 
-    private class FakeNewsDetailsStateCommunicator : NewsDetailsStateCommunicator {
+    private class FakeNewsDetailsCommunications : NewsDetailsCommunications {
 
         val changedStateList = mutableListOf<DetailsUiState>()
-        var readCalledCount = 0
+        var readStateCalledCount = 0
 
-        override fun update(value: DetailsUiState) {
-            changedStateList.add(value)
+        val changedNewsList = mutableListOf<NewsDetailsEntity>()
+        var readNewsCalledCount = 0
+
+        override fun showState(state: DetailsUiState) {
+            changedStateList.add(state)
         }
 
-        override suspend fun read(): DetailsUiState {
-            readCalledCount++
+        override fun showDetailsNews(news: NewsDetailsEntity) {
+            changedNewsList.add(news)
+        }
+
+        override suspend fun fetchDetailsNews(): NewsDetailsEntity {
+            readNewsCalledCount++
+            return changedNewsList.last()
+        }
+
+        override suspend fun fetchState(): DetailsUiState {
+            readStateCalledCount++
             return changedStateList.last()
         }
 
-        override fun collect(
+        override fun collectState(
             lifecycleOwner: LifecycleOwner,
             collector: FlowCollector<DetailsUiState>
+        ) = Unit
+
+        override fun collectNewsDetails(
+            lifecycleOwner: LifecycleOwner,
+            collector: FlowCollector<NewsDetailsEntity>
         ) = Unit
     }
 
     private class FakeNavigationManager : NavigationManager {
 
-        var isNavigateToBackScreen = false
         var navigateToBackCalledCount = 0
+
+        var navigateToSharingScreenCalledCount = 0
+
+        var navigateToNewsUrlCalledCount = 0
 
         override fun navigateToBackScreen() {
             navigateToBackCalledCount++
-            isNavigateToBackScreen = true
+        }
+
+        override fun navigateToSharingScreen(newsUrl: String) {
+            navigateToSharingScreenCalledCount++
+        }
+
+        override fun navigateToNewsUrl(newsUrl: String) {
+            navigateToNewsUrlCalledCount++
         }
     }
 

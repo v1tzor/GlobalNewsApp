@@ -5,7 +5,7 @@ import ru.aleshin.core.functional.Either
 import ru.aleshin.core.managers.CoroutineManager
 import ru.aleshin.news_details_feature_impl.domain.entities.DetailsFailures
 import ru.aleshin.news_details_feature_impl.domain.entities.NewsDetailsEntity
-import ru.aleshin.news_details_feature_impl.presentation.ui.details.communications.NewsDetailsStateCommunicator
+import ru.aleshin.news_details_feature_impl.presentation.ui.details.communications.NewsDetailsCommunications
 import javax.inject.Inject
 
 /**
@@ -19,7 +19,7 @@ internal interface DetailsRequestHandler {
     )
 
     class Base @Inject constructor(
-        private val stateCommunicator: NewsDetailsStateCommunicator,
+        private val communications: NewsDetailsCommunications,
         private val coroutineManager: CoroutineManager
     ) : DetailsRequestHandler {
 
@@ -29,10 +29,11 @@ internal interface DetailsRequestHandler {
         ) = coroutineManager.runOnBackground(scope) {
             when (val either = block.invoke()) {
                 is Either.Right -> {
-                    stateCommunicator.update(DetailsUiState.News(either.data))
+                    communications.showState(DetailsUiState.News)
+                    communications.showDetailsNews(either.data)
                 }
                 is Either.Left -> {
-                    stateCommunicator.update(DetailsUiState.Error)
+                    communications.showState(DetailsUiState.Error)
                 }
             }
         }

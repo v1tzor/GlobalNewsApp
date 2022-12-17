@@ -1,5 +1,6 @@
 package ru.aleshin.core.navigations
 
+import android.content.Intent
 import com.github.terrakok.cicerone.Router
 
 /**
@@ -17,5 +18,9 @@ open class GlobalRouter : Router() {
 
     fun showBottomSheetFragment(screen: BottomSheetFragmentScreen) {
         executeCommands(ShowBottomSheetScreen(screen))
+    }
+
+    fun showIntent(intent: Intent) {
+        executeCommands(ShowIntent(intent))
     }
 }

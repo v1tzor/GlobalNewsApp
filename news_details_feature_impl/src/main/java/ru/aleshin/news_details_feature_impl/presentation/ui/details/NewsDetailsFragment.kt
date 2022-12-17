@@ -1,8 +1,9 @@
 package ru.aleshin.news_details_feature_impl.presentation.ui.details
 
 import android.os.Bundle
-import com.google.android.material.transition.MaterialFadeThrough
+import ru.aleshin.core.extensions.loadImage
 import ru.aleshin.core.platform.fragments.BaseFragmentWithViewModel
+import ru.aleshin.news_details_feature_impl.R
 import ru.aleshin.news_details_feature_impl.databinding.NewsDetailsFragmentBinding
 import ru.aleshin.news_details_feature_impl.di.holder.NewsDetailsComponentHolder
 import javax.inject.Inject
@@ -23,23 +24,31 @@ internal class NewsDetailsFragment :
         NewsDetailsComponentHolder.fetchComponent().inject(this)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enterTransition = MaterialFadeThrough()
-        reenterTransition = MaterialFadeThrough()
-    }
-
     override fun initData(savedInstanceState: Bundle?) {
         super.initData(savedInstanceState)
 
         viewModel.collectState(viewLifecycleOwner) { state -> state.apply(requireViewBinding()) }
 
+        viewModel.collectNewsDetails(viewLifecycleOwner) { settings ->
+            with(requireViewBinding()) {
+                newsImage.loadImage(settings.imageUrl, R.drawable.missing_photo)
+                sourceTitle.text = settings.source
+                contentTitle.text = settings.content
+                timeTitle.text = settings.publishedAt
+            }
+        }
+
         viewModel.init(savedInstanceState == null)
     }
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView(savedInstanceState: Bundle?) = with(requireViewBinding()) {
         super.initView(savedInstanceState)
-        requireViewBinding().backButton.setOnClickListener { viewModel.pressBackButton() }
+
+        toolbar.setNavigationOnClickListener { viewModel.pressBackButton() }
+
+        toolbar.setOnMenuItemClickListener { viewModel.pressShareButton(); true }
+
+        sourceButton.setOnClickListener { viewModel.pressSourceButton() }
     }
 
     override fun fetchViewModelClass() = NewsDetailsViewModel::class.java

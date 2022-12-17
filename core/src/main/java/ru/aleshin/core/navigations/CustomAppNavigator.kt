@@ -1,14 +1,10 @@
 package ru.aleshin.core.navigations
 
-import android.transition.Scene
-import android.transition.TransitionManager
-import android.widget.TextView
-import androidx.fragment.app.*
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
 import com.github.terrakok.cicerone.Command
 import com.github.terrakok.cicerone.androidx.AppNavigator
-import com.github.terrakok.cicerone.androidx.FragmentScreen
-import com.google.android.material.transition.MaterialContainerTransform
-import ru.aleshin.core.R
 
 /**
  * @author Stanislav Aleshin on 15.10.2022.
@@ -24,6 +20,7 @@ class CustomAppNavigator(
         is CloseDialog -> closeDialog(command)
         is ShowBottomSheetScreen -> showBottomSheetScreen(command)
         is ChangeTabFragment -> selectTab(command)
+        is ShowIntent -> showIntent(command)
         else -> super.applyCommand(command)
     }
 
@@ -56,4 +53,6 @@ class CustomAppNavigator(
             commitNow()
         }
     }
+
+    private fun showIntent(command: ShowIntent) = activity.startActivity(command.intent)
 }
