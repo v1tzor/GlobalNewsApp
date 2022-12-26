@@ -4,7 +4,6 @@ import dagger.Binds
 import dagger.Module
 import ru.aleshin.core.di.FeatureScope
 import ru.aleshin.core.handlers.ResponseHandler
-import ru.aleshin.core_db.details.NewsDetailsLocalDataSource
 import ru.aleshin.news_feature_impl.data.data_sources.network.NewsPagingDataSource
 import ru.aleshin.news_feature_impl.data.data_sources.network.NewsRemoteDataSource
 import ru.aleshin.news_feature_impl.data.data_sources.network.paging.PagingParamsHandler

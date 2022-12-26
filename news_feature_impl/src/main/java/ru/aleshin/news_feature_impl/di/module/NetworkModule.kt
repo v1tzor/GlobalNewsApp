@@ -36,7 +36,6 @@ internal class NetworkModule {
     @Provides
     @FeatureScope
     fun provideNewsInterceptor(context: Context): Interceptor {
-//        return NewsInterceptor.Base()
         return if (BuildConfig.DEBUG) NewsInterceptor.Mock(context) else NewsInterceptor.Base()
     }
 
